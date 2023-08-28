@@ -8,7 +8,7 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 109, 67, 176),
+      backgroundColor: Color.fromARGB(255, 237, 177, 210),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,17 +24,26 @@ class IntroPage extends StatelessWidget {
             SizedBox(height: 30),
             Center(
               child: Image.asset(
-                "lib/images/japan.png",
-                height: 340,
+                "lib/images/japan6.png",
+                height: 380,
               ),
             ),
             SizedBox(height: 35),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Text(
-                "Erleben Sie Japan!",
-                style: GoogleFonts.dmSerifDisplay(
-                    fontSize: 40, color: Colors.white),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    "Erleben Sie Japan!",
+                    style: GoogleFonts.dmSerifDisplay(
+                        fontSize: 40, color: Colors.white),
+                  ),
+                  Image.asset(
+                    "lib/images/japanflag.png",
+                    height: 30,
+                  )
+                ],
               ),
             ),
             Padding(
@@ -53,7 +62,7 @@ class IntroPage extends StatelessWidget {
               child: Text(
                 "Entdecke das Land der aufgehenden Sonne und tauche ein in eine Welt voller Tradition, Kultur und atemberaubender Natur.",
                 style: GoogleFonts.dmSerifDisplay(
-                    fontSize: 16, color: Colors.white),
+                    fontSize: 15, color: Colors.white),
               ),
             ),
             SizedBox(height: 40),

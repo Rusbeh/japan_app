@@ -14,17 +14,19 @@ class MyButton extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
-            color: Color.fromARGB(255, 237, 178, 211),
+            color: Color.fromARGB(255, 46, 184, 154),
             borderRadius: BorderRadius.circular(12)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               text,
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 18, color: Colors.white),
             ),
+            SizedBox(width: 10),
             Icon(
               (Icons.arrow_forward),
+              color: Colors.white,
             )
           ],
         ),
