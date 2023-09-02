@@ -1,4 +1,5 @@
 import 'package:app_1/pages/intro_page.dart';
+import 'package:app_1/pages/menu_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,6 +15,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Japan App',
       home: IntroPage(),
+      routes: {
+        '/intropage': (context) => const IntroPage(),
+        '/menupage': (context) => const MenuPage(),
+      },
     );
   }
 }

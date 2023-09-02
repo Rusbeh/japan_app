@@ -1,4 +1,5 @@
 import 'package:app_1/components/button.dart';
+import 'package:app_1/pages/menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,42 +9,45 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 237, 177, 210),
+      backgroundColor: Color(0xff085c9c),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Text(
-                "JAPAN JOURNEY",
-                style: GoogleFonts.dmSerifDisplay(
-                    fontSize: 38, color: Colors.white),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    height: 140,
+                  ),
+                  Text(
+                    "JAPAN JOURNEY",
+                    style: GoogleFonts.dmSerifDisplay(
+                        fontSize: 38, color: Colors.white),
+                  ),
+                  Image.asset(
+                    "lib/images/japanflag.png",
+                    height: 45,
+                  )
+                ],
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 2),
             Center(
               child: Image.asset(
                 "lib/images/japan6.png",
-                height: 380,
+                height: 315,
               ),
             ),
             SizedBox(height: 35),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text(
-                    "Erleben Sie Japan!",
-                    style: GoogleFonts.dmSerifDisplay(
-                        fontSize: 40, color: Colors.white),
-                  ),
-                  Image.asset(
-                    "lib/images/japanflag.png",
-                    height: 30,
-                  )
-                ],
+              child: Text(
+                "Erleben Sie Japan!",
+                style: GoogleFonts.dmSerifDisplay(
+                    fontSize: 40, color: Colors.white),
               ),
             ),
             Padding(
@@ -66,7 +70,13 @@ class IntroPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 40),
-            MyButton(text: "Reise starten!")
+            MyButton(
+              text: "Reise starten!",
+              event: () {
+                // go to menu page
+                Navigator.pushNamed(context, '/menupage');
+              },
+            )
           ],
         ),
       ),
