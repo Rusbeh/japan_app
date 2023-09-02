@@ -1,5 +1,5 @@
 import 'package:app_1/components/button.dart';
-import 'package:app_1/pages/menu_page.dart';
+// import 'package:app_1/pages/menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -9,7 +9,7 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff085c9c),
+      backgroundColor: Color.fromARGB(255, 234, 167, 197),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,12 +70,15 @@ class IntroPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 40),
-            MyButton(
-              text: "Reise starten!",
-              event: () {
-                // go to menu page
-                Navigator.pushNamed(context, '/menupage');
-              },
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: MyButton(
+                text: "Reise starten!",
+                event: () {
+                  // go to menu page
+                  Navigator.pushNamed(context, '/menupage');
+                },
+              ),
             )
           ],
         ),
