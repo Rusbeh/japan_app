@@ -9,7 +9,7 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 234, 167, 197),
+      backgroundColor: Color.fromARGB(255, 215, 165, 187),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -19,7 +19,7 @@ class IntroPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 140,
                   ),
                   Text(
@@ -34,14 +34,14 @@ class IntroPage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 2),
+            const SizedBox(height: 2),
             Center(
               child: Image.asset(
                 "lib/images/japan6.png",
                 height: 315,
               ),
             ),
-            SizedBox(height: 35),
+            const SizedBox(height: 35),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Text(
@@ -60,7 +60,7 @@ class IntroPage extends StatelessWidget {
                     color: Colors.white),
               ),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Text(
@@ -69,7 +69,7 @@ class IntroPage extends StatelessWidget {
                     fontSize: 15, color: Colors.white),
               ),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
               child: MyButton(
