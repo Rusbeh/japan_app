@@ -11,28 +11,43 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
-  List ActivityList = [
-    ActivityTile(
-        name: "Sushi",
-        price: "25",
-        imagePath: "lib/images/japan5.png",
-        rating: "4"),
-    ActivityTile(
-      name: "Nuddelsuppe",
-      price: "18",
-      imagePath: "lib/images/japan4.png",
-      rating: "4",
-    ),
-    ActivityTile(
-      name: "Kimono",
-      price: "49",
-      imagePath: "lib/images/japan3.png",
-      rating: "5",
-    ),
-  ];
+  // ignore: non_constant_identifier_names
 
   @override
   Widget build(BuildContext context) {
+    List ActivityList = [
+      ActivityTile(
+        name: "Mitama Matsuri Festival",
+        price: "49",
+        imagePath: "lib/images/japan10.png",
+        rating: "5",
+        details: () {
+          // go to menu page
+          Navigator.pushNamed(context, '/festivalpage');
+        },
+      ),
+      ActivityTile(
+        name: "Nuddelsuppe Restaurant",
+        price: "18",
+        imagePath: "lib/images/japan4.png",
+        rating: "4",
+        details: () {
+          // go to menu page
+          Navigator.pushNamed(context, '/nudelsuppepage');
+        },
+      ),
+      ActivityTile(
+        name: "Sushi-Buffet",
+        price: "25",
+        imagePath: "lib/images/japan5.png",
+        rating: "4",
+        details: () {
+          // go to menu page
+          Navigator.pushNamed(context, '/menupage');
+        },
+      ),
+    ];
+
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 215, 165, 187),
       appBar: AppBar(
@@ -55,26 +70,28 @@ class _MenuPageState extends State<MenuPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // promo message
+                Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // promo message
 
-                    const Text(
-                      "32% Nachlass",
-                      style: TextStyle(fontSize: 22),
-                    ),
-                    const SizedBox(height: 20),
-                    MyButton(text: "Buchen", event: () {})
+                      const Text(
+                        "32% Nachlass",
+                        style: TextStyle(fontSize: 22),
+                      ),
+                      const SizedBox(height: 20),
+                      MyButton(text: "Buchen", event: () {})
 
-                    // redeem button
-                  ],
+                      // redeem button
+                    ],
+                  ),
                 ),
                 Image.asset("lib/images/japan8.png", height: 135),
               ],
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 25.0),
             child: TextField(
@@ -89,15 +106,16 @@ class _MenuPageState extends State<MenuPage> {
               ),
             ),
           ),
-          const SizedBox(height: 20),
-          const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 27.0),
-              child: Text("Events",
-                  style: TextStyle(
-                      fontSize: 27,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white))),
           const SizedBox(height: 10),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 27.0),
+            child: Text("Events",
+                style: TextStyle(
+                    fontSize: 27,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white)),
+          ),
+          const SizedBox(height: 5),
 
           Expanded(
             child: ListView.builder(
@@ -107,7 +125,15 @@ class _MenuPageState extends State<MenuPage> {
             ),
           ),
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 15),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 27.0),
+            child: Text("Derzeit Beliebt",
+                style: TextStyle(
+                    fontSize: 27,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white)),
+          ),
 
           // Container(
           //   padding: EdgeInsets.all(20),
@@ -143,37 +169,56 @@ class _MenuPageState extends State<MenuPage> {
           //     ],
           //   ),
           // ),
-          // const SizedBox(height: 10),
+          const SizedBox(height: 5),
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Container(
-              height: 150,
-              width: double.infinity,
               decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 94, 185, 160),
                   borderRadius: BorderRadius.circular(20)),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    const SizedBox(width: 5),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Image.asset("lib/images/japan3.png"),
+                    Image.asset(
+                      "lib/images/japan3.png",
+                      height: 140,
                     ),
-                    const SizedBox(width: 40),
-                    const Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Kimono Show",
-                          style: TextStyle(fontSize: 22, color: Colors.white),
-                        ),
-                        Text("€ 33",
-                            style: TextStyle(fontSize: 18, color: Colors.white))
-                      ],
+                    Container(
+                      color: Colors.blue,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Zeitreise im Kimono",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20)),
+                          Row(
+                            children: [
+                              Text("€ 33",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20)),
+                              Container(
+                                color: Colors.amber,
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "5",
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 18),
+                                    ),
+                                    const Icon(Icons.star,
+                                        size: 20,
+                                        color: Color.fromARGB(255, 224, 198, 6))
+                                  ],
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                     )
                   ],
                 ),

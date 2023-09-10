@@ -1,5 +1,7 @@
+import 'package:app_1/pages/festival.dart';
 import 'package:app_1/pages/intro_page.dart';
 import 'package:app_1/pages/menu_page.dart';
+import 'package:app_1/pages/nudelsuppe.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,6 +20,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/intropage': (context) => const IntroPage(),
         '/menupage': (context) => const MenuPage(),
+        '/festivalpage': (context) => const FestivalPage(),
+        '/nudelsuppepage': (context) => const NudelsuppePage(),
       },
     );
   }
