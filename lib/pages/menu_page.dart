@@ -1,6 +1,5 @@
 import 'package:app_1/components/activity_tile.dart';
 import 'package:app_1/components/button.dart';
-import 'package:app_1/modules/activity.dart';
 import 'package:flutter/material.dart';
 
 class MenuPage extends StatefulWidget {
@@ -52,6 +51,11 @@ class _MenuPageState extends State<MenuPage> {
       backgroundColor: Color.fromARGB(255, 215, 165, 187),
       appBar: AppBar(
         leading: const Icon(Icons.menu),
+        actions: [
+          IconButton(
+              onPressed: () => {Navigator.pushNamed(context, '/cartpage')},
+              icon: Icon(Icons.shopping_cart))
+        ],
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: const Text("J A P A N"),
@@ -180,46 +184,27 @@ class _MenuPageState extends State<MenuPage> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      "lib/images/japan3.png",
-                      height: 140,
+                    Image.asset("lib/images/japan3.png", height: 100),
+                    const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Kimono Kultur",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold)),
+                        SizedBox(height: 10),
+                        Text("€ 45,00",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold)),
+                      ],
                     ),
-                    Container(
-                      color: Colors.blue,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Zeitreise im Kimono",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20)),
-                          Row(
-                            children: [
-                              Text("€ 33",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 20)),
-                              Container(
-                                color: Colors.amber,
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      "5",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 18),
-                                    ),
-                                    const Icon(Icons.star,
-                                        size: 20,
-                                        color: Color.fromARGB(255, 224, 198, 6))
-                                  ],
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    )
+                    const Icon(Icons.favorite, color: Colors.red, size: 40)
                   ],
                 ),
               ),

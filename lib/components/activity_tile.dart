@@ -1,4 +1,3 @@
-import 'package:app_1/modules/activity.dart';
 import 'package:flutter/material.dart';
 
 class ActivityTile extends StatelessWidget {
