@@ -22,8 +22,58 @@ class FestivalPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: ListView(
-                      // Ihr restlicher Code, wie Bilder, Text usw.
+                    children: [
+                      Image.asset(
+                        "lib/images/japan10.png",
+                        height: 220,
                       ),
+                      const SizedBox(height: 25),
+                      const Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                            size: 30,
+                          ),
+                          SizedBox(width: 5),
+                          Text(
+                            "5,0",
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      const Text(
+                        "Mitama Matsuri Festival",
+                        style: TextStyle(
+                          fontSize: 28,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 25),
+                      const Text(
+                        "Das erwartet Sie",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      const Text(
+                        "Das Mitama Matsuri Festival in Tokyo beeindruckt mit Tausenden von leuchtenden Laternen, die den Yasukuni-Schrein erhellen und den Geistern der Kriegsopfer gewidmet sind. Besucher können traditionelle Darbietungen genießen, köstliches japanisches Streetfood probieren und an spirituellen Zeremonien teilnehmen.",
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                          height: 2,
+                        ),
+                      ),
+                    ],
+                    // Ihr restlicher Code, wie Bilder, Text usw.
+                  ),
                 ),
               ),
               SizedBox(height: 10),

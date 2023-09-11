@@ -26,17 +26,16 @@ class _MenuPageState extends State<MenuPage> {
         },
       ),
       ActivityTile(
-        name: "Nuddelsuppe Restaurant",
-        price: "18",
-        imagePath: "lib/images/japan4.png",
-        rating: "4",
-        details: () {
-          // go to menu page
-          Navigator.pushNamed(context, '/nudelsuppepage');
-        },
-      ),
+          name: "Noodle Harmony Japan",
+          price: "18",
+          imagePath: "lib/images/japan4.png",
+          rating: "4",
+          details: () {
+            // go to menu page
+            Navigator.pushNamed(context, '/nudelsuppepage');
+          }),
       ActivityTile(
-        name: "Sushi-Buffet",
+        name: "Gourmet Nigiri Palace Katsura",
         price: "25",
         imagePath: "lib/images/japan5.png",
         rating: "4",
@@ -95,7 +94,7 @@ class _MenuPageState extends State<MenuPage> {
               ],
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 15),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 25.0),
             child: TextField(
@@ -110,12 +109,12 @@ class _MenuPageState extends State<MenuPage> {
               ),
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 13),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 27.0),
             child: Text("Events",
                 style: TextStyle(
-                    fontSize: 27,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.white)),
           ),
@@ -129,12 +128,12 @@ class _MenuPageState extends State<MenuPage> {
             ),
           ),
 
-          const SizedBox(height: 15),
+          const SizedBox(height: 25),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 27.0),
             child: Text("Derzeit Beliebt",
                 style: TextStyle(
-                    fontSize: 27,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.white)),
           ),
@@ -173,7 +172,7 @@ class _MenuPageState extends State<MenuPage> {
           //     ],
           //   ),
           // ),
-          const SizedBox(height: 5),
+          const SizedBox(height: 8),
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -187,7 +186,7 @@ class _MenuPageState extends State<MenuPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset("lib/images/japan3.png", height: 100),
+                    Image.asset("lib/images/japan3.png", height: 115),
                     const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -199,9 +198,10 @@ class _MenuPageState extends State<MenuPage> {
                         SizedBox(height: 10),
                         Text("€ 45,00",
                             style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold)),
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ))
                       ],
                     ),
                     const Icon(Icons.favorite, color: Colors.red, size: 40)
@@ -211,7 +211,7 @@ class _MenuPageState extends State<MenuPage> {
             ),
           ),
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 25),
         ],
       ),
     );

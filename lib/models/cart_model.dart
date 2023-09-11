@@ -16,6 +16,12 @@ class CartModel extends ChangeNotifier {
     }
   }
 
+//Aus Warenkorb entfernen
+  void clearNudelsuppe() {
+    nudelsuppe = 0;
+    notifyListeners();
+  }
+
   void addFestival() {
     festival++;
     notifyListeners();
@@ -26,6 +32,13 @@ class CartModel extends ChangeNotifier {
       festival--;
       notifyListeners();
     }
+  }
+
+//Aus Warenkorb entfernen
+
+  void clearFestival() {
+    festival = 0;
+    notifyListeners();
   }
 
   int get totalItems => nudelsuppe + festival;

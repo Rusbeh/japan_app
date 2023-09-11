@@ -46,13 +46,7 @@ class CartPage extends StatelessWidget {
                                 ),
                                 SizedBox(width: 14),
                                 IconButton(
-                                  onPressed: () {
-                                    cart.nudelsuppe = 0;
-
-                                    Provider.of<CartModel>(context,
-                                            listen: false)
-                                        .notifyListeners();
-                                  },
+                                  onPressed: () => cart.clearNudelsuppe(),
                                   icon: Icon(
                                     Icons.delete,
                                     color: Colors.white,
@@ -84,13 +78,7 @@ class CartPage extends StatelessWidget {
                                     style: TextStyle(color: Colors.white)),
                                 SizedBox(width: 14),
                                 IconButton(
-                                  onPressed: () {
-                                    cart.festival = 0;
-
-                                    Provider.of<CartModel>(context,
-                                            listen: false)
-                                        .notifyListeners();
-                                  },
+                                  onPressed: () => cart.clearFestival(),
                                   icon: Icon(
                                     Icons.delete,
                                     color: Colors.white,
@@ -112,68 +100,3 @@ class CartPage extends StatelessWidget {
     );
   }
 }
-
-// import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-// import '../models/cart_model.dart';
-
-// class CartPage extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Consumer<CartModel>(
-//       builder: (context, cart, child) {
-//         return Scaffold(
-//           backgroundColor: Color.fromARGB(255, 215, 165, 187),
-//           appBar: AppBar(
-//             backgroundColor: Colors.transparent,
-//             elevation: 0,
-//             title: Text("Warenkorb"),
-//             centerTitle: true,
-//           ),
-//           body: Padding(
-//             padding: const EdgeInsets.all(20.0),
-//             child: Column(
-//               children: [
-//                 Expanded(
-//                   child: ListView(
-//                     children: [
-//                       if (cart.nudelsuppe > 0)
-//                         buildTile(context, "Nudelsuppe", "23", cart.nudelsuppe,
-//                             () => cart.nudelsuppe = 0),
-//                       if (cart.festival > 0)
-//                         buildTile(context, "Festival", "??", cart.festival,
-//                             () => cart.festival = 0),
-//                     ],
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         );
-//       },
-//     );
-//   }
-
-//   ListTile buildTile(BuildContext context, String title, String price,
-//       int count, VoidCallback onDelete) {
-//     return ListTile(
-//       title: Text(title),
-//       subtitle: Text(price),
-//       trailing: Row(
-//         mainAxisSize: MainAxisSize.min,
-//         children: [
-//           Text(count.toString()),
-//           SizedBox(width: 16),
-//           IconButton(
-//             icon: Icon(Icons.delete),
-//             onPressed: () {
-//               onDelete();
-//               Provider.of<CartModel>(context, listen: false).notifyListeners();
-//             },
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-

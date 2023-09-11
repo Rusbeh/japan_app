@@ -22,8 +22,58 @@ class NudelsuppePage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: ListView(
-                      // Ihr restlicher Code, wie Bilder, Text etc.
+                    children: [
+                      Image.asset(
+                        "lib/images/japan4.png",
+                        height: 220,
                       ),
+                      const SizedBox(height: 25),
+                      const Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                            size: 30,
+                          ),
+                          SizedBox(width: 5),
+                          Text(
+                            "5,0",
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      const Text(
+                        "Noodle Harmony",
+                        style: TextStyle(
+                          fontSize: 28,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 25),
+                      const Text(
+                        "Das erwartet Sie",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      const Text(
+                        "Das Noodle Harmony in Tokio ist mehr als nur ein Restaurant, es ist eine Oase für alle Liebhaber authentischer japanischer Nudelsuppen. Hier verschmelzen traditionelle Rezepte und moderne Kochtechniken, um ein einzigartiges Geschmackserlebnis zu kreieren, das jeden Gaumen entzückt",
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                          height: 2,
+                        ),
+                      ),
+                    ],
+                    // Ihr restlicher Code, wie Bilder, Text etc.
+                  ),
                 ),
               ),
               SizedBox(height: 10),
