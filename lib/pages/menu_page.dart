@@ -1,4 +1,4 @@
-import 'package:app_1/components/activity_tile.dart';
+import 'package:app_1/components/event_tile.dart';
 import 'package:app_1/components/button.dart';
 import 'package:flutter/material.dart';
 
@@ -12,48 +12,30 @@ class MenuPage extends StatefulWidget {
 class _MenuPageState extends State<MenuPage> {
   // ignore: non_constant_identifier_names
 
+  bool _isDarkMode = false;
+
   @override
   Widget build(BuildContext context) {
-    List ActivityList = [
-      ActivityTile(
-        name: "Mitama Matsuri Festival",
-        price: "49",
-        imagePath: "lib/images/japan10.png",
-        rating: "5",
-        details: () {
-          // go to menu page
-          Navigator.pushNamed(context, '/festivalpage');
-        },
-      ),
-      ActivityTile(
-          name: "Noodle Harmony Japan",
-          price: "18",
-          imagePath: "lib/images/japan4.png",
-          rating: "4",
-          details: () {
-            // go to menu page
-            Navigator.pushNamed(context, '/nudelsuppepage');
-          }),
-      ActivityTile(
-        name: "Gourmet Nigiri Palace Katsura",
-        price: "25",
-        imagePath: "lib/images/japan5.png",
-        rating: "4",
-        details: () {
-          // go to menu page
-          Navigator.pushNamed(context, '/menupage');
-        },
-      ),
-    ];
+    
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 215, 165, 187),
+      backgroundColor:
+          _isDarkMode ? Colors.black : Color.fromARGB(255, 215, 165, 187),
       appBar: AppBar(
         leading: const Icon(Icons.menu),
         actions: [
           IconButton(
-              onPressed: () => {Navigator.pushNamed(context, '/cartpage')},
-              icon: Icon(Icons.shopping_cart))
+            onPressed: () => {Navigator.pushNamed(context, '/cartpage')},
+            icon: Icon(Icons.shopping_cart),
+          ),
+          IconButton(
+            icon: Icon(Icons.dark_mode),
+            onPressed: () {
+              setState(() {
+                _isDarkMode = !_isDarkMode;
+              });
+            },
+          )
         ],
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -123,8 +105,8 @@ class _MenuPageState extends State<MenuPage> {
           Expanded(
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: ActivityList.length,
-              itemBuilder: (context, index) => ActivityList[index],
+              itemCount: EventTileList.length,
+              itemBuilder: (context, index) => EventTileList[index],
             ),
           ),
 

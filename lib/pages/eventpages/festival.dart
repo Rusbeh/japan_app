@@ -15,12 +15,12 @@ class FestivalPage extends StatelessWidget {
           elevation: 0,
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: ListView(
+                  // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Image.asset(
                       "lib/images/japan10.png",

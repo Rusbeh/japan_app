@@ -1,5 +1,4 @@
 import 'package:app_1/components/button.dart';
-// import 'package:app_1/pages/menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

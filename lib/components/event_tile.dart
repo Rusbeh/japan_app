@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ActivityTile extends StatelessWidget {
+class EventTile extends StatelessWidget {
   final String name;
   final String price;
   final String imagePath;
   final String rating;
   final void Function()? details;
 
-  const ActivityTile(
+  const EventTile(
       {super.key,
       required this.name,
       required this.price,
